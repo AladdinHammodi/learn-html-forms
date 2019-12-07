@@ -1,6 +1,14 @@
 const response = require("../response");
+const css = require("../styles");
 
-const expectedKeys = ["name"];
+const expectedKeys = [
+  "name",
+  "email",
+  "tel",
+  "contact",
+  "message",
+  "marketingConsent",
+];
 
 exports.handler = async (event, context) => {
   try {
