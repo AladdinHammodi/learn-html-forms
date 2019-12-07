@@ -1,5 +1,6 @@
 [build]
-  functions = "server/"
+  command = "npx netlify-lambda build server"
+  functions = "api/"
 [dev]
   publish = "solution/"
 [[redirects]]
