@@ -45,12 +45,12 @@ All inputs with a `name` attribute within your form will be submitted as the "se
 
 1. Open `workshop/index.html` in your editor
 1. Add a form to the page containing
-1. It should send a `GET` request to `"https://learn-forms.netlify.com/part1"`
+1. It should send a `GET` request to `"https://learn-forms.netlify.com/submit/part1"`
 1. The response will tell you whether you successfully submitted a name
 
 ## Part Two: different input types
 
-1. Change your form to submit to `"https://learn-forms.netlify.com/part1"`
+1. Change your form to submit to `"https://learn-forms.netlify.com/submit/part2"`
 1. Add fields for:
    - an email address
    - a telephone number
