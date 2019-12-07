@@ -1,5 +1,4 @@
 const response = require("../response");
-const css = require("../styles");
 
 const expectedKeys = [
   "name",
