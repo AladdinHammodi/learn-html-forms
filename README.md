@@ -8,45 +8,49 @@ You create a form with the `<form>` element. This is a container for all the dif
 
 ### Inputs
 
-The humble `<input>` element can be used to render many different types of input:
+The humble `<input>` element can be used to render many different types of input.
+
+#### Different input types
+
+There are many different types of input to cover all the various kinds of data you might want to collect from a user. You can see the full list and read more about each [in the MDN input article](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
 
 - `<input type="text">`
+  Basic single line text input.
+- `<textarea></textarea>`
+  Allows multiline text input.
 - `<input type="email">`
-- `<input type="password">`
+  Shows a special keyboard with the `@` symbol on some phones. Also validates that the user entered an email on submission.
 - `<input type="checkbox">`
+  Used for turning specific values on or off.
 - `<input type="radio">`
-- `<input type="range">`
-- `<input type="number">`
-- `<input type="tel">`
-
-There is also a `<select>` element that allows the user to choose between multiple `<option>`s.
+  Used for selecting one value out of a group of options.
 
 ### Form submission
 
 Forms can also contain button elements. By default a button has an implicit `type="submit"`. This means that clicking it will submit the form. It's generally a good idea to explicitly add this type to your submit button.
 
-#### Controlling the request
+#### The `action` attribute
 
-##### The `action` attribute
+When submitted a form will send a request to the URL in its `action` attribute. This can be a relative URL to a route within the same site (`/submit`) or an external URL to some other API (`https://some-other-api.com/submit`).
 
-When submitted a form will send a request to the URL in its `action` attribute. This can be a relative URl to a route within the same site (`/submit`) or an external URL to some other API (`https://pokeapi.co/submit`).
+#### Submitting user data
 
-##### The `method` attribute
+All inputs with a `name` attribute within your form will be submitted. By default they'll be sent as the "search" part of the URL (often called the querystring; it's the bit following a `"?"`). It will be structured like `"url.com?name=value&otherInput=otherValue"`, with each name/value pair separated by an ampersand (`&`).
 
-You can control the method the form sends the request with using the `method` attribute. For example: `<form method="POST" action="/submit">`.
-
-##### Submitting user data
-
-All inputs with a `name` attribute within your form will be submitted as the "search" part of the URL (often called the querystring; it's the bit following a `"?"`). It will be structured like `"url.com?inputName=userValue"`.
+Some input types submit differently. For example a checkbox's value will either not be present (unchecked) or will be the input's `value` attribute (`checkboxName=checkboxValue`). If you don't set a value it will default to `"on"` (`checkboxName=on`). Groups of radios with the same name should have `value` attributes, which is what they will submit (`radioGroupName=selectedValue`).
 
 ## Workshop
 
-## Part One: basic GET request
+## Part One: basic request
 
 1. Open `workshop/index.html` in your editor
-1. Add a form to the page containing
-1. It should send a `GET` request to `"https://learn-forms.netlify.com/submit/part1"`
+1. Add a form to the page containing a text input
+   - This should submit a `name` value
+   - Don't forget inputs need labels!
+1. The form should submit to `"https://learn-forms.netlify.com/submit/part1"`
 1. The response will tell you whether you successfully submitted a name
+
+![example 1](https://user-images.githubusercontent.com/9408641/70389189-fe080400-19b3-11ea-8cb3-cacfc06690c4.gif)
 
 ## Part Two: different input types
 
@@ -54,7 +58,6 @@ All inputs with a `name` attribute within your form will be submitted as the "se
 1. Add fields for:
    - an email address
    - a telephone number
-   - a group of radios to choose your preferred method of contact (email or telephone)
    - a textarea for a message
    - a marketing-consent checkbox
 1. The data submitted should look something like this:
@@ -62,7 +65,21 @@ All inputs with a `name` attribute within your form will be submitted as the "se
    name=Oli
    email=hello@oliverjam.es
    telephone=0123455678
-   contact=email
    message=Hello this is a message!
    marketingConsent=on
    ```
+
+![example 2](https://user-images.githubusercontent.com/9408641/70389175-bda88600-19b3-11ea-8ddc-751915a6da19.gif)
+
+## Part Three: using radio groups
+
+1.
+
+1. Add a group of three radios that allow the user to choose their preferred contact method (email, phone, post)
+1. The extra data submitted should look like this (if email was selected):
+   ```
+   contact=email
+   ```
+1. You can read more [about radio groups on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Defining_a_radio_group)
+
+![example 3](https://user-images.githubusercontent.com/9408641/70389223-753d9800-19b4-11ea-95ce-00198a1c9fc3.gif)
