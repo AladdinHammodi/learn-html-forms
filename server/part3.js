@@ -1,6 +1,13 @@
 const html = require("./response/html");
 
-const expectedKeys = ["name", "email", "tel", "message", "marketingConsent"];
+const expectedKeys = [
+  "name",
+  "email",
+  "tel",
+  "contact",
+  "message",
+  "marketingConsent",
+];
 
 exports.handler = async (event, context) => {
   try {
