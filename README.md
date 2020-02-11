@@ -73,8 +73,6 @@ Some input types submit differently. For example a checkbox's value will either 
 
 ## Part Three: using radio groups
 
-1.
-
 1. Add a group of three radios that allow the user to choose their preferred contact method (email, phone, post)
 1. The extra data submitted should look like this (if email was selected):
    ```
