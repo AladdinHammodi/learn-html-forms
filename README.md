@@ -31,7 +31,9 @@ Forms can also contain button elements. By default a button has an implicit `typ
 
 #### The `action` attribute
 
-When submitted a form will send a request to the URL in its `action` attribute. This can be a relative URL to a route within the same site (`/submit`) or an external URL to some other API (`https://some-other-api.com/submit`).
+When submitted a form will send a request to the URL in its `action` attribute. This can be a relative URL within the same site (`/submit`) or an external URL to some other API (`https://some-other-api.com/submit`).
+
+This request is a standard `GET` request, just like when you type a URL manually (or click a link). The browser will render whatever response it receives from the server.
 
 #### Submitting user data
 
