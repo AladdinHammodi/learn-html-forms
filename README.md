@@ -45,6 +45,7 @@ Some input types submit differently. For example a checkbox's value will either 
 
 ## Part One: basic request
 
+1. Clone this repository
 1. Open `workshop/index.html` in your editor
 1. Add a form to the page containing a text input
    - This should submit a `name` value
